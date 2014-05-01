@@ -14,7 +14,7 @@ export PERL_CPANM_OPT="--quiet --notest -l $BUILD_DIR/local"
 
 #rm -rf $BUILD_DIR/local
 if [ -d $CACHE_DIR/local ]; then
-  cp -a $CACHE_DIR/local $BUILD_DIR/local
+  cp -a $CACHE_DIR/local $BUILD_DIR/
 fi
 
 cd $BUILD_DIR
@@ -33,5 +33,5 @@ cpanm Starman 2>&1 | indent
 if [ -d $BUILD_DIR/local ]; then
   rm -rf $CACHE_DIR/local
   mkdir -p $CACHE_DIR
-  cp -a $BUILD_DIR/local $CACHE_DIR/local
+  cp -a $BUILD_DIR/local $CACHE_DIR/
 fi
